@@ -13,8 +13,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-
-
+import java.util.List;
 
 
 /**
@@ -30,6 +29,18 @@ import java.util.Arrays;
 public class AttrGroupController {
     @Autowired
     private AttrGroupService attrGroupService;
+
+    @GetMapping("withattrs/cat/{catId}")
+    public Resp<List<GroupVO>> queryGroupVOsByCid(@PathVariable("catId")Long cid){
+
+        List<GroupVO> groupVOs = attrGroupService.queryGroupVOsByCid(cid);
+
+        return Resp.ok(groupVOs);
+    }
+
+
+
+
 
     @GetMapping("withattr/{gid}")
     public Resp<GroupVO> queryGroupVOByGid(@PathVariable("gid")Long gid){
