@@ -1,4 +1,4 @@
-package com.atguigu.config;
+package com.atguigu.gmall.search.config;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
@@ -13,6 +13,6 @@ public class ElasticSearchConfig {
     public RestHighLevelClient restHighLevelClient(){
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("172.16.116.100", 9200, "http")));
+                        new HttpHost("192.168.19.100", 9200, "http")));
     }
 }

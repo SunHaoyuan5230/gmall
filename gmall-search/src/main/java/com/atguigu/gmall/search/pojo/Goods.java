@@ -17,7 +17,7 @@ import java.util.List;
 
 @Data
 @Document(indexName = "goods", type = "info", shards = 3, replicas = 2)
-public class pojo {
+public class Goods {
 
     @Id
     private Long skuId;
@@ -34,8 +34,8 @@ public class pojo {
     private Long sale;
     @Field(type = FieldType.Date)
     private Date createTime;
-    @Field(type = FieldType.Long)
-    private Long store;
+    @Field(type = FieldType.Boolean)
+    private boolean store;
 
     @Field(type = FieldType.Long)
     private Long brandId;
